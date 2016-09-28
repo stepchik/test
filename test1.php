@@ -4,6 +4,11 @@
  */
 $x = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
 
+include_once "f.php";
+$x = f($x);
+
+print_r($x);
+
 /*
 print_r($x) - должен выводить это:
 Array

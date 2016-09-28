@@ -11,8 +11,17 @@ $data1 = [
     'parent3.child3.position' => 10,
 ];
 
-//сделает такой и наоборот
-$data = [
+include_once "f.php";
+
+$data = [];
+
+foreach ($data1 as $key => $value){
+    $data = array_merge_recursive($data, f(array_reverse(explode('.', $key)), $value) );
+}
+
+
+print_r($data);
+/*$data = [
     'parent' => [
         'child' => [
             'field' => 1,
@@ -34,3 +43,5 @@ $data = [
         ]
     ],
 ];
+*/
+
